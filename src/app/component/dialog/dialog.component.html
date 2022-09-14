@@ -1,0 +1,23 @@
+<h1 mat-dialog-title> Add New Product</h1>
+<div mat-dialog-content> </div>
+
+<mat-form-field appearance="outline">
+    <mat-label>Product Name</mat-label>
+    <input matInput placeholder="Name">
+</mat-form-field>
+
+<mat-form-field appearance="outline">
+    <mat-label>Product Catergory</mat-label>
+    <mat-select placeholder="category">
+        <mat-option value="fruit">fruit</mat-option>
+        <mat-option value="vegetable">vegetable</mat-option>
+        <mat-option value="electronics">electronics </mat-option>
+    </mat-select>
+</mat-form-field>
+
+<mat-form-field appearance="outline">
+    <mat-label>Description</mat-label>
+    <input matInput placeholder="Description">
+</mat-form-field>
+<button mat-raised-button (click)="closeDialog()" >Cancel</button>
+<button mat-raised-button color="primary"(click)="addProduct()" >Save</button>
