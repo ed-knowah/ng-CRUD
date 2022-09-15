@@ -7,14 +7,17 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./dialog.component.scss'],
 })
 export class DialogComponent implements OnInit {
-  constructor(private dialog: MatDialog) { }
+  freshnessList: any[] = ['Brand new', 'Second Hand', 'Refurbished'];
+  optionList: any[] = ['Fruits', 'Vegetables', 'Electronics'];
+  constructor(private dialog: MatDialog) {}
 
-  ngOnInit(): void { }
+  ngOnInit(): void {}
   addProduct() {
     console.log('object');
-    alert("Item added successfully")
+    alert('Item added successfully');
+    this.dialog.closeAll();
   }
   closeDialog() {
-    this.dialog.closeAll()
+    this.dialog.closeAll();
   }
 }
