@@ -1,0 +1,86 @@
+{
+  "productList": [
+    {
+      "productName": "hehq",
+      "category": "Vegetables",
+      "freshness": "Second Hand",
+      "price": 300,
+      "description": "Description",
+      "date": "2022-09-15T23:00:00.000Z",
+      "id": 1
+    },
+    {
+      "productName": "ujew",
+      "category": "Electronics",
+      "freshness": "Second Hand",
+      "price": 33,
+      "description": "sew",
+      "date": "2022-09-15T23:00:00.000Z",
+      "id": 2
+    },
+    {
+      "productName": "ueru",
+      "category": "Vegetables",
+      "freshness": "Brand new",
+      "price": 33,
+      "description": "fdver",
+      "date": "2022-09-15T23:00:00.000Z",
+      "id": 3
+    },
+    {
+      "productName": "jkej",
+      "category": "Vegetables",
+      "freshness": "Brand new",
+      "price": 22,
+      "description": "22",
+      "date": "2022-09-22T23:00:00.000Z",
+      "id": 4
+    },
+    {
+      "productName": "jej",
+      "category": "Vegetables",
+      "freshness": "Brand new",
+      "price": 200,
+      "description": "this is a description",
+      "date": "2022-09-14T23:00:00.000Z",
+      "id": 5
+    },
+    {
+      "productName": "hrfh",
+      "category": "Vegetables",
+      "freshness": "Brand new",
+      "price": 11,
+      "description": "11",
+      "date": "2022-09-15T23:00:00.000Z",
+      "id": 6
+    },
+    {
+      "productName": "hth",
+      "category": "Fruits",
+      "freshness": "Second Hand",
+      "price": 555,
+      "description": "34344re",
+      "date": "2022-09-21T23:00:00.000Z",
+      "id": 7
+    },
+    {
+      "productName": "A test product",
+      "category": "Vegetables",
+      "freshness": "Brand new",
+      "price": 3000,
+      "description": "THIS IS MY DESCRIPTION",
+      "date": "2022-09-21T23:00:00.000Z",
+      "id": 8
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
