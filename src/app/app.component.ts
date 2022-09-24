@@ -7,7 +7,6 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 
 export interface ProductData {
- 
   productName: string;
   category: string;
   freshness: string;
@@ -29,8 +28,10 @@ export class AppComponent implements OnInit, OnDestroy {
     'description',
     'freshness',
     'date',
+    'action',
   ];
   dataSource!: MatTableDataSource<ProductData>;
+  // productAvailable:boolean = false
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -41,10 +42,17 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   openDialog() {
-    this.dialog.open(DialogComponent, {
-      width: '40%',
-      height: '80%',
-    });
+    this.dialog
+      .open(DialogComponent, {
+        width: '40%',
+        height: '80%',
+      })
+      .afterClosed()
+      .subscribe((val) => {
+        if (val == 'save') {
+          this.getAllProducts();
+        }
+      });
   }
 
   getAllProducts() {
@@ -53,7 +61,7 @@ export class AppComponent implements OnInit, OnDestroy {
         this.dataSource = new MatTableDataSource(res);
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
-        console.log(res);
+        // console.log(res);
       },
       error: () => {
         console.log('There was an error while fetching data');
@@ -67,6 +75,33 @@ export class AppComponent implements OnInit, OnDestroy {
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
+  }
+
+  editProduct(row: any) {
+    this.dialog
+      .open(DialogComponent, {
+        width: '40%',
+        height: '80%',
+        data: row,
+      })
+      .afterClosed()
+      .subscribe((val) => {
+        if (val == 'update') {
+          this.getAllProducts();
+        }
+      });
+  }
+
+  deleteProduct(id: number) {
+    this.api.deleteProduct(id).subscribe({
+      next: () => {
+        alert(`Product has been deleted`);
+        this.getAllProducts();
+      },
+      error: () => {
+        alert(`error deleting product`);
+      },
+    });
   }
 
   ngOnDestroy(): void {
